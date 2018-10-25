@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="no-js" lang=""> 
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CarJaidee</title>
+        <meta name="description" content="CarJaidee">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="images/favicon.png">
+        <link rel="shortcut icon" href="images/favicon.png">
+
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+
+
+        <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
+        <link href="assets/calendar/fullcalendar.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="assets/css/charts/chartist.min.css" rel="stylesheet"> 
+        <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet"> 
+
+
+        <style>
+        #weatherWidget .currentDesc {
+            color: #ffffff!important;
+        }
+            .traffic-chart { 
+                min-height: 335px; 
+            }
+            #flotPie1  {
+                height: 150px;
+            } 
+            #flotPie1 td {
+                padding:3px;
+            }
+            #flotPie1 table {
+                top: 20px!important;
+                right: -10px!important;
+            }
+            .chart-container {
+                display: table;
+                min-width: 270px ;
+                text-align: left;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #flotLine5  {
+                height: 105px;
+            } 
+
+            #flotBarChart {
+                height: 150px;
+            }
+            #cellPaiChart{
+                height: 160px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <!-- Left Panel --> 
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default"> 
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html"><i class="menu-icon fa fa-home" aria-hidden="true"></i>  หน้าเเรก</a>
+                            <a href="ManageDataTec.html"> <i class="menu-icon fa fa-street-view" aria-hidden="true"></i> จัดการข้อมูลช่าง</a>
+                            <a href="manage-data-gagrage.html"> <i class="menu-icon fa fa-wrench" aria-hidden="true"></i> จัดการข้อมูลอู่</a>
+                            <a href="#"> <i class="menu-icon fa fa-calendar-check-o" aria-hidden="true"></i> จัดการข้อมูลการจอง</a>
+                            <a href="#"><i class="menu-icon fa fa-comments" aria-hidden="true"></i> คะเเนนเเละรีวิว</a>
+                            <a href="#"> <i class="menu-icon fa fa-file" aria-hidden="true"></i> ออกรายงาน</a>
+                            <a href="#"> <i class="menu-icon fa fa-list-alt" aria-hidden="true"></i> ข้อมูลการสั่งสินค้า</a>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </aside><!-- /#left-panel --> 
+        <!-- Left Panel -->
+
+
+
+        <!-- Right Panel --> 
+        <div id="right-panel" class="right-panel">
+
+            <!-- Header-->
+            <header id="header" class="header">  
+                <div class="top-left">
+                    <div class="navbar-header"> 
+                        <a class="navbar-brand" href="./"><img src="images/lg.jpg" width= "30" height="30" >  CarJaidee</a>   
+                        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> 
+                    </div> 
+                </div>
+                <div class="top-right"> 
+                    <div class="header-menu"> 
+                        <div class="header-left">
+                        <div class="user-area dropdown float-right">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user-circle-o"  aria-hidden="true" ></i>
+                            </a>
+
+                            <div class="user-menu dropdown-menu">
+                                <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
+
+                                <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
+
+                                <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
+
+                                <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+            </header><!-- /header -->
+            <!-- Header-->
+
+
+            <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-5">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>จัดการข้อมูลช่าง</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="row m-0">
+                            <div class="col-sm-10">
+                                <div class>
+                                     <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ข้อมูลเจ้าของอู่</a>
+                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">ข้อมูลอู่</a>                                  
+                                        </div>
+                                     </nav>
+                                         <div class="tab-content" id="nav-tabContent">
+                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><br>                                                                            
+                                                 
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">ชื่อ</label>
+                                                    <output>นายไก่ </output>
+                                                </div>
+                                                <div class="form-group col-md-4 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">นามสกุล</label>
+                                                    <output>แกงเขียวหวาน </output>
+                                                 </div>
+                                             </div>
+                                             <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">ประสบการณ์</label>
+                                                     <output>8 ปี </output>
+                                                </div>
+                                                <div class="form-group col-md-4 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">เลขรหัสบัตรประชาชน</label>
+                                                     <output>1603300592521 </output>
+                                                 </div>
+                                             </div>
+                                             <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">เบอร์โทรศัพท์</label>
+                                                     <output>085-xxxxxxx </output>
+                                                </div>
+                                             </div>                                                                            
+                                             <a href="Edit-gagrage1.html"><button type="button" class="btn btn-secondary"> แก้ไข </button></a><br><br>    
+                                            </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><br>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">ชื่ออู่ซ้อมรถ</label>
+                                                    <output> อู่ไก่งานดีสีสวย </output>
+                                                </div>
+                                                <div class="form-group col-md-4 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">หมายเลขทะเบียนการค้า</label>
+                                                    <output>123 456 789 </output>
+                                                 </div>
+                                             </div>
+                                             <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">เบอร์โทรศัพท์</label>
+                                                    <output>085-xxxxxxx </output>
+                                                </div>
+                                                <div class="form-group col-md-4 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">เวลาทำการ</label>
+                                                    <output>วันจันทร์-วันเสาร์ </output>
+                                                 </div>
+                                             </div>  <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">เลขที่บ้าน</label>
+                                                    <output>1494/2  </output>
+                                                </div>
+                                                <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">หมู่บ้าน</label>
+                                                    <output>เมืองทอง </output>
+                                                 </div>
+                                                 <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">ถนน</label>
+                                                    <output>เมืองทอง </output>
+                                                 </div>
+                                             </div>
+                                             <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">จังหวัด</label>
+                                                    <output>นครศรีธรรมราช </output>
+                                                </div>
+                                                <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">อำเภอ</label>
+                                                    <output>เมือง </output>
+                                                 </div>
+                                                 <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">ตำบล</label>
+                                                    <output>คลัง </output>
+                                                 </div>
+                                             </div>
+                                             <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputEmail4">รหัสไปษณีย์</label>
+                                                    <output>08500 </output>
+                                                </div>
+                                                <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">ละติจูด</label>
+                                                    <output>50 </output>
+                                                 </div>
+                                                 <div class="form-group col-md-2 float-right" style="margin: auto;">
+                                                    <label for="inputPassword4">ลองติจูด</label>
+                                                    <output>150</output>
+                                                 </div>
+                                             </div>
+                                             <a href="Edit-gagrage2.html"><button type="button" class="btn btn-secondary"> แก้ไข </button></a><br><br>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    
+                </div>
+
+           
+
+               
+        <div class="clearfix"></div>
+
+    
+    </div><!-- /#right-panel -->
+
+
+
+
+
+
+            
+            <div class="clearfix"></div>
+            <footer class="site-footer">
+                <div class="footer-inner bg-white">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5>CarJaidee  V.001.09</h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <h5>Date: 24/10/2018</h5>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div><!-- /#right-panel -->
+
+
+        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+
+
+        <!--Chartist Chart-->
+        <script src="assets/js/lib/chartist/chartist.min.js"></script>
+        <script src="assets/js/lib/chartist/chartist-plugin-legend.js"></script> 
+
+        
+        <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
+        <script src="assets/js/lib/flot-chart/jquery.flot.pie.js"></script>
+        <script src="assets/js/lib/flot-chart/jquery.flot.spline.js"></script>
+
+
+        <script src="assets/weather/js/jquery.simpleWeather.min.js"></script>
+        <script src="assets/weather/js/weather-init.js"></script>
+
+
+        <script src="assets/js/lib/moment/moment.js"></script>
+        <script src="assets/calendar/fullcalendar.min.js"></script>
+        <script src="assets/calendar/fullcalendar-init.js"></script>
+    </body>
+</html>
